@@ -12842,11 +12842,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MI\\source\\repos\\ChristmasShop\\ChristmasShop\\ChristmasShop.csproj",
+      "projectUniqueName": "C:\\Users\\MI\\Desktop\\BSUIR\\3 kurs\\00 COURSE PROJECT 00\\GIT\\shop\\ChristmasShop\\ChristmasShop.csproj",
       "projectName": "ChristmasShop",
-      "projectPath": "C:\\Users\\MI\\source\\repos\\ChristmasShop\\ChristmasShop\\ChristmasShop.csproj",
+      "projectPath": "C:\\Users\\MI\\Desktop\\BSUIR\\3 kurs\\00 COURSE PROJECT 00\\GIT\\shop\\ChristmasShop\\ChristmasShop.csproj",
       "packagesPath": "C:\\Users\\MI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MI\\source\\repos\\ChristmasShop\\ChristmasShop\\obj\\",
+      "outputPath": "C:\\Users\\MI\\Desktop\\BSUIR\\3 kurs\\00 COURSE PROJECT 00\\GIT\\shop\\ChristmasShop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MI\\AppData\\Roaming\\NuGet\\NuGet.Config",
