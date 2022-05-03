@@ -1,0 +1,46 @@
+﻿@model Order
+
+<div class="order-form-container">
+    <div class="order-form">
+        <h3 class="order-form-title">Оформление заказа</h3>
+        <form autocomplete="nope" asp-action="Checkout" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label asp-for="name"></label>
+                <div class="form-input-container">
+                    <input autocomplete="nope" asp-for="name" class="form-input" placeholder="Ваше имя" />
+                    <span asp-validation-for="name" class="form-input-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="surname"></label>
+                <div class="form-input-container">
+                    <input autocomplete="nope" asp-for="surname" class="form-input" placeholder="Ваша фамилия" />
+                    <span asp-validation-for="surname" class="form-input-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="address"></label>
+                <div class="form-input-container">
+                    <input autocomplete="nope" asp-for="address" class="form-input" placeholder="Ваш адрес" />
+                    <span asp-validation-for="address" class="form-input-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone"></label>
+                <div class="form-input-container">
+                    <input autocomplete="nope" asp-for="phone" class="form-input" placeholder="Ваш телефон" />
+                    <span asp-validation-for="phone" class="form-input-error"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="email"></label>
+                <div class="form-input-container">
+                    <input asp-for="email" class="form-input" placeholder="Ваш email" />
+                    <span asp-validation-for="email" class="form-input-error"></span>
+                </div>
+            </div>
+            <input class="button form-button-submit" type="submit" value="Завершить заказ" />
+        </form>
+    </div>
+            
+</div>

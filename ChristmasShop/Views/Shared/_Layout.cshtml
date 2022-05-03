@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-logo">
+                <a draggable="false" class="header-logo-title" asp-controller="Home" asp-action="Index">ELKI TUT</a>
+                <h2 class="header-logo-subtitle">КУПИТЬ ЕЛКИ В МИНСКЕ</h2>
+            </div>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-item"><a draggable="false" href="/">Топовые елки</a></li>
+                    <li class="header-nav-item"><a draggable="false" href="/Trees/List">Все елки</a></li>
+                    <li class="header-nav-item"><a draggable="false" href="/Trees/List/natural">Настоящие елки</a></li>
+                    <li class="header-nav-item"><a draggable="false" href="/Trees/List/artificial">Искусственные елки</a></li>
+                    <li class="header-nav-item nav-item-header-basket"><a draggable="false" href="/ShopCart/"><img class="header-basket" src="~/img/basket.png" alt="basket" /></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main-container">
+            <div class="container-elements">
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-contacts">
+                <h3 class="footer-contact-title">Контакты</h3>
+                <a href="tel:+375293904490" class="footer-contact-subtitle">
+                    <img class="footer-contact-icon" src="~/img/icon-phone.png" alt="footer-contact-title" />
+                    <h4 class="footer-contact-info">+375293904490</h4>
+                </a>
+            </div>
+            <div class="footer-date">
+                <h3 class="footer-contact-title">Год создания</h3>
+                <p>2022</p>
+            </div>
+            <div class="footer-address">
+                <h3 class="footer-contact-title">Адрес</h3>
+                <a href="https://yandex.by/maps/org/bguir_uchebny_korpus_4/1179483603/panorama/?l=stv%2Csta&ll=27.594342%2C53.912226&panorama%5Bdirection%5D=71.288374%2C6.376114&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=27.593834%2C53.912061&panorama%5Bspan%5D=120.680712%2C60.000000&tab=panorama&z=17.93" target="_blank" class="footer-contact-subtitle">
+                    <img class="footer-contact-icon" src="~/img/icon-marker.png" alt="footer-contact-title" />
+                    <h4 class="footer-contact-info">Минск,ул.Гикало,9</h4>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/script.js"></script>
+</body>
+</html>

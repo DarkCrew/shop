@@ -1,0 +1,10 @@
+﻿@model HomeViewModel
+
+@*<h1>Best trees</h1>*@
+@{
+    foreach (Tree tree in Model.favTrees)
+    {
+        @Html.Partial("AllTrees", tree);
+    }
+}
+

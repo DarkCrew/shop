@@ -1,0 +1,27 @@
+﻿@model ShopCartViewModel
+
+
+@foreach (var el in Model.shopCart.listShopItems)
+{
+    <div class="order-item-container">
+        <div class="order-item">
+            <img class="order-image" src="@el.tree.img" alt="@el.tree.name" />
+            <div class="order-description-container">
+                <div class="order-description">
+                    <p>Производитель: <span class="order-description-value">@el.tree.name</span></p>
+                    <p>Модель: <span class="order-description-value">@el.tree.shortDesc</span></p>
+                </div>
+            </div>
+            <div class="order-price">
+                <p class="order-price-value">@el.tree.price</p>
+                <p>BYN</p>
+            </div>
+            <a class="delete-item" asp-controller="ShopCart" asp-action="Delete" asp-route-id="@el.tree.id">
+                <span class="delete-item-line1"></span>
+                <span class="delete-item-line2"></span>
+            </a>
+        </div>
+    </div>
+}
+<br />
+<a class="button button-order" asp-controller="Order" asp-action="Checkout">Оформить заказ</a>
