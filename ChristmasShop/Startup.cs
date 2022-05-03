@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ChristmasShop.Data;
-using ChristmasShop.Data.interfaces;
-using ChristmasShop.Data.mocks;
-using ChristmasShop.Data.Models;
-using ChristmasShop.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ChristmasShop.Data;
+using ChristmasShop.Data.interfaces;
+using Microsoft.EntityFrameworkCore;
+using ChristmasShop.Data.Repository;
+using ChristmasShop.Data.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Hosting;
 
 namespace ChristmasShop
 {
@@ -20,9 +21,9 @@ namespace ChristmasShop
     {
 
         private IConfigurationRoot _confSting;
-        public Startup(IHostingEnvironment hostEnv)
+        public Startup(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostenv)
         {
-            _confSting = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
+            _confSting = new ConfigurationBuilder().SetBasePath(hostenv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -32,6 +33,15 @@ namespace ChristmasShop
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
             //services.AddTransient<IAllCars, CarRepository>(); // bind interface and mocks
             //services.AddTransient<ICarsCategory, CategoryRepository>(); // bind interface and mocks
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/SignIn");
+                options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/SignIn");
+            });
+
+            services.AddTransient<IUsers, UserRepository>();
+
             services.AddTransient<IAllTrees, TreeRepository>();
             services.AddTransient<ITreesCategory, CategoryTreeRepository>();
             services.AddTransient<IAllOrders, OrdersRepository>();
@@ -45,13 +55,24 @@ namespace ChristmasShop
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles(); // css and other files
             app.UseSession();
             // app.UseMvcWithDefaultRoute(); // track address (URL ADRESS AND USING CONTROL DEFAULT)
+
+
+            app.UseStatusCodePages();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            //app.UseRouting();
+
+            app.UseAuthentication();
+            //app.UseAuthorization();
+
+            //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");

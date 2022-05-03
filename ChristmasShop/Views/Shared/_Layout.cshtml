@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @*<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />*@
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" />
 </head>
 <body>
@@ -21,7 +23,17 @@
                     <li class="header-nav-item"><a draggable="false" href="/Trees/List/natural">Настоящие елки</a></li>
                     <li class="header-nav-item"><a draggable="false" href="/Trees/List/artificial">Искусственные елки</a></li>
                     <li class="header-nav-item nav-item-header-basket"><a draggable="false" href="/ShopCart/"><img class="header-basket" src="~/img/basket.png" alt="basket" /></a></li>
+                    <li class="nav-item">
+                        @if (User.IsInRole("admin"))
+                        {<a class="nav-link" asp-controller="Tables" asp-action="AdminTable"> Admin Table </a>}
+                    </li>
                 </ul>
+                <div class="text-end">
+                    @if (!User.Identity.IsAuthenticated)
+                    {<a class="align-right nav-link" asp-controller="Account" asp-action="SignIn"> Sign In </a>}
+                    else
+                    {<a class="align-right nav-link" asp-controller="Account" asp-action="Logout"> Exit </a>}
+                </div>
             </nav>
         </div>
     </header>
@@ -54,6 +66,7 @@
             </div>
         </div>
     </footer>
+    <script src="¬/js/bootstrap.min.js.map"></script>
     <script src="~/js/script.js"></script>
 </body>
 </html>
