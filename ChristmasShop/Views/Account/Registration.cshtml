@@ -1,30 +1,28 @@
 ﻿@model RegistrationViewModel
-<div class="container" style=" margin-right: auto; margin-left: auto; margin-top: 15rem; width: 25rem;">
-    <form asp-action="Registration" method="post" class="align-self-md-auto">
-        <div class="form-group">
-            <label asp-for="Email"></label>
-            <div>
-                <input asp-for="Email" />
+
+<div class="form-sign-in-container">
+    <div class="form-sign-in registration">
+        <h3>Форма регистрации</h3>
+        <form asp-action="Registration" method="post" class="form-container">
+            <div class="form-sign-in-group" style="">
+                <input placeholder="Логин(почта)" asp-for="Email" />
+                <span asp-validation-for="Email" />
             </div>
-            <span asp-validation-for="Email" />
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Password"></label>
-            <div>
-                <input asp-for="Password" />
+            <div class="form-sign-in-group">
+                <input placeholder="Пароль" asp-for="Password" />
+                <span asp-validation-for="Password" />
             </div>
-            <span asp-validation-for="Password" />
-        </div>
+            <div class="form-sign-in-group">
+                <input placeholder="Подтверждение пароля" asp-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword" />
+            </div>
 
-        <div class="form-group">
-            <label asp-for="ConfirmPassword">Repeat the password</label><br />
-            <input asp-for="ConfirmPassword" />
-            <span asp-validation-for="ConfirmPassword" />
-        </div>
-
-        <input class="btn btn-success" type="submit" value="Register" />
-        <a class="btn btn-warning" asp-controller="Account" asp-action="SignIn"> Back </a>
-        <a class="btn btn-warning" asp-controller="Users" asp-action="MainPage"> Main page </a>
-    </form>
+            <div class="form-sign-in-buttons">
+                <input class="button form-button-sign-in" type="submit" value="Зарегистрироваться" />
+                <a class="form-button-registration" asp-controller="Account" asp-action="SignIn"> Назад </a>
+            </div>
+        </form>
+    </div>
 </div>
+
+

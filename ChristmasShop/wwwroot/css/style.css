@@ -48,7 +48,7 @@ button {
 }
 
 .main {
-    min-height: calc(100vh - 120px - 90px);
+    min-height: calc(100vh - 150px - 90px);
     background-color: var(--color-gray);
 }
 
@@ -75,8 +75,7 @@ body {
 /* HEADER START */
 
 .header {
-    padding: 30px 0;
-    height: 60px;
+    height: 150px;
     background-color: var(--color-dark-green);
     user-select: none;
 }
@@ -84,8 +83,56 @@ body {
 .header-container {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     font-family: 'Arial-Regular';
+}
+
+.header-top-container {
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-gray);
+}
+
+.header-top-subcontainer {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    max-width: 1280px;
+    padding: 0 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.header-top-authorization-buttons {
+    display: flex;
+    height: 100%;
+    gap: 30px;
+}
+
+.header-top-items {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header-top-items.btns:hover{
+    color: var(--color-dark-gray);
+}
+
+.header-bottom-container {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Arial-Regular';
+    bottom: 0;
 }
 
 .header-logo {
@@ -128,8 +175,10 @@ body {
 
 .header-nav-list {
     display: flex;
+    height: 40px;
     list-style-type: none;
     gap: 35px;
+    margin: 0;
 }
 
 .header-nav-item {
@@ -139,19 +188,21 @@ body {
     color: var(--color-gray);
 }
 
-.nav-item-header-basket {
-    height: 30px;
+.nav-item-header-basket,
+.nav-item-header-search {
     width: 30px;
 }
 
-.header-basket {
+.header-basket,
+.header-search {
     height: 100%;
     width: 100%;
     object-fit: contain;
     pointer-events: none;
 }
 
-.header-basket:hover {
+.header-basket:hover,
+.header-search:hover{
     filter: invert(0%) sepia(11%) saturate(0%) hue-rotate(330deg) brightness(113%) contrast(96%);
 }
 
@@ -181,7 +232,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    grid-column-gap: 40px;
     grid-row-gap: 50px;
 }
 
@@ -435,9 +487,222 @@ body {
     
 
 /* ORDER END */
+
+.form-sign-in-container {
+    height: calc(100vh - 350px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-sign-in {
+    height: 300px;
+    width: 400px;
+    background: var(--color-beige);
+}
+
+.form-sign-in.registration {
+    height: 370px;
+}
+
+.form-sign-in h3{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    font-size: 30px;
+    background: var(--color-dark-green);
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-family: 'Arial-Regular';
+}
+
+.form-sign-in-group{
+    display: flex;
+    height: 50px;
+    margin: 20px 20px;
+}
+
+.form-sign-in-group input{
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+    color: var(--color-dark-green);
+    border: 2px solid var(--color-dark-green);
+}
+
+.form-sign-in-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.form-button-sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    padding: 0 20px;
+    font-size: 13px;
+    border-radius: 10px;
+    background: var(--color-dark-green);
+    text-transform: uppercase;
+    color: var(--color-gray);
+    border: 2px solid var(--color-dark-green);
+    box-sizing: border-box;
+    padding: 0;
+    transition: .5s;
+}
+
+.form-button-registration {
+    text-decoration: underline;
+}
+
+/* SEARCH START */
+
+.search-names-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-names-item {
+    padding: 7px;
+    font-family: 'Arial-Regular';
+    border-radius: 10px;
+    color: var(--color-gray);
+    background: var(--color-dark-gray);
+    opacity: .4;
+    user-select: none;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-form-input {
+    display: block;
+    height: 50px;
+    width: 400px;
+    padding-left: 20px;
+    font-size: 25px;
+    color: var(--color-dark-green);
+    border: 2px solid var(--color-dark-green);
+    border-radius: 9px;
+}
+
+.search-form-button {
+    width: 200px;
+    border: 2px solid var(--color-beige);
+    border-radius: 9px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+
+/* SEARCH END */
+
+/* ADMIN-TABLE START */
+
+.admin-table-container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.admin-table-subcontainer{
+    width: 100%;
+    background: var(--color-beige);
+}
+
+.admin-table{
+    width: 100%;
+}
+
+.admin-table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-table-title{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 0;
+    font-size: 20px;
+    background: var(--color-dark-green);
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-family: 'Arial-Regular';
+}
+
+.admin-table-users {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 0;
+    font-size: 15px;
+    color: var(--color-dark-green);
+    font-family: 'Arial-Regular';
+    border-bottom: 2px solid var(--color-dark-green);
+}
+
+.admin-table-users:last-child{
+    border: 0;
+}
+
+.admin-table-title th{
+    width: 100%;
+}
+
+.admin-table-users td {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.admin-table-buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background: var(--color-dark-green);
+    box-sizing: border-box;
+}
+
+.admin-table-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.admin-table-button{
+    height: 30px;
+    padding: 5px 30px;
+    background: var(--color-gray);
+    color: var(--color-dark-green);
+    border-radius: 10px;
+}
+
+/* ADMIN-TABLE END */
 /* MAIN END */
-
-
 /* FOOTER START */
 .footer {
     padding: 25px 0;

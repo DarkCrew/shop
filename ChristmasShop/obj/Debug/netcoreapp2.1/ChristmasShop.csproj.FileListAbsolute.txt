@@ -65,3 +65,4 @@ C:\Users\MI\Desktop\BSUIR\3 kurs\00 COURSE PROJECT 00\GIT\shop\ChristmasShop\obj
 C:\Users\MI\Desktop\BSUIR\3 kurs\00 COURSE PROJECT 00\GIT\shop\ChristmasShop\obj\Debug\netcoreapp2.1\ChristmasShop.dll
 C:\Users\MI\Desktop\BSUIR\3 kurs\00 COURSE PROJECT 00\GIT\shop\ChristmasShop\obj\Debug\netcoreapp2.1\ChristmasShop.pdb
 C:\Users\MI\Desktop\BSUIR\3 kurs\00 COURSE PROJECT 00\GIT\shop\ChristmasShop\obj\Debug\netcoreapp2.1\ChristmasShop.csproj.CopyComplete
+C:\Users\MI\Desktop\BSUIR\3 kurs\00 COURSE PROJECT 00\GIT\shop\ChristmasShop\obj\Debug\netcoreapp2.1\Razor\Views\Search\Search.cshtml.g.cs

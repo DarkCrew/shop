@@ -6,35 +6,48 @@
     <title>@ViewBag.Title</title>
     @*<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />*@
 
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" />
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
-            <div class="header-logo">
-                <a draggable="false" class="header-logo-title" asp-controller="Home" asp-action="Index">ELKI TUT</a>
-                <h2 class="header-logo-subtitle">КУПИТЬ ЕЛКИ В МИНСКЕ</h2>
-            </div>
-            <nav class="header-nav">
-                <ul class="header-nav-list">
-                    <li class="header-nav-item"><a draggable="false" href="/">Топовые елки</a></li>
-                    <li class="header-nav-item"><a draggable="false" href="/Trees/List">Все елки</a></li>
-                    <li class="header-nav-item"><a draggable="false" href="/Trees/List/natural">Настоящие елки</a></li>
-                    <li class="header-nav-item"><a draggable="false" href="/Trees/List/artificial">Искусственные елки</a></li>
-                    <li class="header-nav-item nav-item-header-basket"><a draggable="false" href="/ShopCart/"><img class="header-basket" src="~/img/basket.png" alt="basket" /></a></li>
-                    <li class="nav-item">
-                        @if (User.IsInRole("admin"))
-                        {<a class="nav-link" asp-controller="Tables" asp-action="AdminTable"> Admin Table </a>}
-                    </li>
-                </ul>
-                <div class="text-end">
-                    @if (!User.Identity.IsAuthenticated)
-                    {<a class="align-right nav-link" asp-controller="Account" asp-action="SignIn"> Sign In </a>}
-                    else
-                    {<a class="align-right nav-link" asp-controller="Account" asp-action="Logout"> Exit </a>}
+            <div class="header-top-container">
+                <div class="header-top-subcontainer">
+                    <div class="header-top-info">
+                        <p class="header-top-items">Работаем C 9:00 до 21:00</p>
+                    </div>
+                    <div class="header-top-authorization-buttons">
+                        <div class="nav-item">
+                            @if (User.IsInRole("admin"))
+                            {<a class="header-top-items btns" asp-controller="Tables" asp-action="AdminTable"> Таблица админа </a>}
+                        </div>
+                        <div class="header-text-end">
+                            @if (!User.Identity.IsAuthenticated)
+                            {<a class="header-top-items btns" asp-controller="Account" asp-action="SignIn"> Войти </a>}
+                            else
+                            {<a class="header-top-items btns" asp-controller="Account" asp-action="Logout"> Выйти </a>}
+                        </div>
+                    </div>
                 </div>
-            </nav>
+            </div>
+            <div class="header-bottom-container">
+                <div class="header-logo">
+                    <a draggable="false" class="header-logo-title" asp-controller="Home" asp-action="Index">ELKI TUT</a>
+                    <h2 class="header-logo-subtitle">КУПИТЬ ЕЛКИ В МИНСКЕ</h2>
+                </div>
+                <nav class="header-nav">
+                    <ul class="header-nav-list">
+                        <li class="header-nav-item"><a draggable="false" href="/">Топовые елки</a></li>
+                        <li class="header-nav-item"><a draggable="false" href="/Trees/List">Все елки</a></li>
+                        <li class="header-nav-item"><a draggable="false" href="/Trees/List/natural">Настоящие елки</a></li>
+                        <li class="header-nav-item"><a draggable="false" href="/Trees/List/artificial">Искусственные елки</a></li>
+                        <li class="header-nav-item nav-item-header-basket"><a draggable="false" href="/ShopCart/"><img class="header-basket" src="~/img/basket.png" alt="basket" /></a></li>
+
+                        <li class="header-nav-item nav-item-header-search"><a draggable="false"asp-controller="Search" asp-action="Search"><img class="header-search" src="~/img/search.png" alt="search" /></a></li>
+                    </ul>
+                </nav>
+            </div>
+            
         </div>
     </header>
     <main class="main">
