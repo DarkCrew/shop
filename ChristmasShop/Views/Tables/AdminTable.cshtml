@@ -12,7 +12,7 @@
                                    id="@user.ID" value="@user.ID"
                                    class="admin-table-check-box">
                         </td>
-                        <td><a asp-controller="Users" asp-action="UserPage" asp-route-userID="@user.ID">  @user.Email </a></td>
+                        <td>@user.Email</td>
                         @{ if (!user.Unblocked)
                             {
                                 <td> Blocked </td>

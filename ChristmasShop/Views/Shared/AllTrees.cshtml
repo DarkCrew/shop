@@ -3,11 +3,16 @@
 
 <div class="slider-element">
     <img src="@Model.img" class="slider-element-photo" alt="@Model.name" />
-    <h3 class="slider-element-title">@Model.name</h3>
-    <p class="slider-price">Цена: @Model.price BYN</p>
-    <form class="slider-button-container" action="">
-        <button class="button slider-element-button" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.id">Добавить в корзину</button>
-    </form>
+    <div class="slider-description-container">
+        <p class="slider-description">@Model.shortDesc</p>
+    </div>
+    <div class="slider-other-info">
+        <h3 class="slider-element-title">@Model.name</h3>
+        <p class="slider-price">Цена: @Model.price BYN</p>
+        <form class="slider-button-container" action="">
+            <button class="button slider-element-button" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.id">Добавить в корзину</button>
+        </form>
+    </div>
 </div>
 
 

@@ -5,16 +5,16 @@
         <h3>Форма регистрации</h3>
         <form asp-action="Registration" method="post" class="form-container">
             <div class="form-sign-in-group" style="">
-                <input placeholder="Логин(почта)" asp-for="Email" />
-                <span asp-validation-for="Email" />
+                <input asp-for="Email" placeholder="Логин(почта)" />
+                <span asp-validation-for="Email" class="form-input-error"></span>
             </div>
             <div class="form-sign-in-group">
                 <input placeholder="Пароль" asp-for="Password" />
-                <span asp-validation-for="Password" />
+                <span asp-validation-for="Password" class="form-input-error"></span>
             </div>
             <div class="form-sign-in-group">
                 <input placeholder="Подтверждение пароля" asp-for="ConfirmPassword" />
-                <span asp-validation-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword" class="form-input-error"></span>
             </div>
 
             <div class="form-sign-in-buttons">

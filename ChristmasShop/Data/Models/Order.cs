@@ -35,8 +35,8 @@ namespace ChristmasShop.Data.Models
 
         [Display(Name = "Введите email")]
         [DataType(DataType.EmailAddress)]
-        [StringLength(25)]
-        [Required(ErrorMessage = "Длина email должна быть от 3 до 25 символов")]
+        [StringLength(40)]
+        [Required(ErrorMessage = "Длина email должна быть от 3 до 40 символов")]
         public string email { get; set; }
 
         [BindNever]

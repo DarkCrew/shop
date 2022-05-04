@@ -12,12 +12,17 @@ namespace ChristmasShop.Data.Models
         public int ID { get; set; }
 
         [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Введите пароль")]
         public string Password { get; set; }
 
         public byte[] salt { get; set; }
 
+        [Display(Name = "Введите email")]
         [DataType(DataType.EmailAddress)]
+        [StringLength(40)]
+        [Required(ErrorMessage = "Длина email должна быть от 3 до 40 символов")]
         public string Email { get; set; }
+
         public bool Unblocked { get; set; }
 
         public int? RoleId { get; set; }

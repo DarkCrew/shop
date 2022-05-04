@@ -5,7 +5,7 @@
         <p class="search-names-item">GreenTerra</p>
         <p class="search-names-item">Dommelochi</p>
         <p class="search-names-item">Max Christmas</p>
-        <p class="search-names-item">National Tree Company</p>
+        <p class="search-names-item">NTC</p>
         <p class="search-names-item">Nordic Collection</p>
         <p class="search-names-item">GrandSITI</p>
         <p class="search-names-item">Matpol</p>
@@ -32,11 +32,16 @@
 {
     <div class="slider-element">
         <img src="@item.img" class="slider-element-photo" alt="@item.name" />
-        <h3 class="slider-element-title">@item.name</h3>
-        <p class="slider-price">Цена: @item.price BYN</p>
-        <form class="slider-button-container" action="">
-            <button class="button slider-element-button" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@item.id">Добавить в корзину</button>
-        </form>
+        <div class="slider-description-container">
+            <p class="slider-description">@item.shortDesc</p>
+        </div>
+        <div class="slider-other-info">
+            <h3 class="slider-element-title">@item.name</h3>
+            <p class="slider-price">Цена: @item.price BYN</p>
+            <form class="slider-button-container" action="">
+                <button class="button slider-element-button" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@item.id">Добавить в корзину</button>
+            </form>
+        </div>
     </div>
 }
 
